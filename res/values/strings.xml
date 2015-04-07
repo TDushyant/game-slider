@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Slider</string>
+    <string name="action_settings">About LearnOn</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="number_game">Play Number Game</string>
+    <string name="alpha_game">Play Alphabet Game</string>
+    <string name="how_to_play">How to play</string>
+    <string name="quit">Quit</string>
+    <string name="title_activity_number_game">Number Game</string>
+    <string name="title_activity_number_game_popup">Select Options</string>
+    <string name="title_activity_ad">Ad Activity</string>
+    <string name="title_activity_alpha_game">Alphabet Game</string>
+    <string name="title_activity_help">Help</string>
+    <string name="go_to_main">Go To Main</string>
+    <string name="play_game">Play Game</string>
+    <string name="numbergame">Numeric</string>
+    <string name="alphabetgame">Alphabets</string>
+    <string name="number9"> 9 Tiles     </string>
+    <string name="number16">16 Tiles</string>
+    <string name="number25">25 Tiles</string>
+    <string name="alphasmall">small</string>
+    <string name="alphacapital">CAPITAL  </string>
+    <string name="alphamix">mIxED</string>
+    <string name="strict">Traditional</string>
+    <string name="freeflowing">Free Flowing</string>
+    <string name="startgame">Let\'s Play</string>
+    <string name="title_activity_play_game">Select Option and Play</string>
+    <string name="title_activity_about">About LearnOn</string>
+    <string name="title_activity_high_score">Scores:</string>
+
+</resources>
