@@ -82,7 +82,7 @@ public class NumberGameActivity extends Activity {
 				        long elapsedTime = SystemClock.elapsedRealtime() - stopWatch.getBase();
 				        long minutes = TimeUnit.MILLISECONDS.toMinutes(elapsedTime);
 				        long seconds = TimeUnit.MILLISECONDS.toSeconds(elapsedTime) % 60;
-				        String timeElapsed = minutes+ ":" + seconds;
+				        String timeElapsed = minutes+ "." + seconds;
 				        //create message box to guide user to main screen
 				        AlertDialog.Builder builder = new AlertDialog.Builder(NumberGameActivity.this);
 				        builder.setMessage("You Win").setTitle("Congratulations");

@@ -3,6 +3,9 @@ package com.tilingGames.slider;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
 
 import android.R.integer;
 import android.app.Activity;
@@ -33,18 +36,30 @@ public class HighScoreActivity extends Activity {
 		
 		//read the file
 		String fileContents = readFile();
-		String[] userScores = fileContents.split(",");
-		int len = userScores.length;
-		String[] temp;
 		
-		for(int i =0;i<len;i++){
-			temp = userScores[i].split("\\|");
-			a2.add("Name : " + temp[0] + "\n \t \t Time : " + temp[1]);
+		if(fileContents != null)
+		{
+			
+			String[] userScores = fileContents.split(",");
+			int len = userScores.length;
+			String[] temp;
+			
+			userScores = sortAccordingToTime(userScores);
+						
+			for(int i =0;i<len;i++){
+				temp = userScores[i].split("\\|");
+				a2.add("Name : " + temp[0] + "\n \t \t Time : " + temp[1].replace('.', ':'));
+			}
+			
+			
+			
+			 as1 = new  ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,a2);
+	
+		 		lv.setAdapter(as1);
 		}
-		
-		 as1 = new  ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,a2);
-
-	 		lv.setAdapter(as1);
+		else{
+			Util.displayToast(this, "There aren't any scores!",true);
+		}
 	}
 
 	@Override
@@ -73,7 +88,7 @@ public class HighScoreActivity extends Activity {
 		File highscorefile = new File(Environment.getExternalStorageDirectory().getPath() +"/SliderGame/HighScore.txt");
         if(!highscorefile.exists())
         {
-        	return "No Record Found";
+        	return null;
         }
         else{
         	StringBuilder fileContents = new StringBuilder();
@@ -107,5 +122,41 @@ public class HighScoreActivity extends Activity {
         }
 	}
 	
+	public String[] sortAccordingToTime(String[] userScores){
+		int len = userScores.length;
+		String temp = "";
+		
+		for(int i=0;i<len;i++){
+			String Score = userScores[i].split("\\|")[1];
+			
+			for(int j =0;j<len;j++){
+				
+				
+				String compareScore = userScores[j].split("\\|")[1];
+				
+				if(compareTimeString(Score,compareScore)){
+					temp = userScores[i];
+					userScores[i]=userScores[j];
+					userScores[j]=temp;
+				}
+				
+			}
+			
+		}
+		
+		return userScores;
+	}
 	
+	public boolean compareTimeString(String scr1,String scr2){
+		
+		float score1 = Float.parseFloat(scr1);
+		float score2 = Float.parseFloat(scr2);
+		
+		if(score1<score2)
+		{
+			return true;
+		}
+		
+		return false;
+	}
 }
