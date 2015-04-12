@@ -9,8 +9,9 @@ package com.tilingGames.slider;
 
 public final class R {
     public static final class anim {
-        public static final int fadein=0x7f040000;
-        public static final int fadeout=0x7f040001;
+        public static final int bounce=0x7f040000;
+        public static final int fadein=0x7f040001;
+        public static final int fadeout=0x7f040002;
     }
     public static final class attr {
     }
@@ -40,34 +41,35 @@ public final class R {
         public static final int wall_paper=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001f;
-        public static final int alphaGame=0x7f090011;
-        public static final int alphacapital=0x7f090017;
-        public static final int alphamix=0x7f090019;
-        public static final int alphaoptions=0x7f090016;
-        public static final int alphasmall=0x7f090018;
-        public static final int bannerTextView=0x7f09000e;
-        public static final int button1=0x7f09001d;
-        public static final int freeflowing=0x7f09001b;
-        public static final int gameOption=0x7f09001a;
-        public static final int gameType=0x7f09000f;
-        public static final int gridView1=0x7f090000;
+        public static final int aboutText=0x7f090000;
+        public static final int action_settings=0x7f090020;
+        public static final int alphaGame=0x7f090012;
+        public static final int alphacapital=0x7f090018;
+        public static final int alphamix=0x7f09001a;
+        public static final int alphaoptions=0x7f090017;
+        public static final int alphasmall=0x7f090019;
+        public static final int bannerTextView=0x7f09000f;
+        public static final int button1=0x7f09001e;
+        public static final int freeflowing=0x7f09001c;
+        public static final int gameOption=0x7f09001b;
+        public static final int gameType=0x7f090010;
+        public static final int gridView1=0x7f090001;
         public static final int helpText=0x7f090003;
         public static final int highScore=0x7f090009;
         public static final int howToPlay=0x7f09000b;
+        public static final int imgLogo=0x7f09000e;
         public static final int l1=0x7f090004;
         public static final int mainLayout=0x7f090005;
-        public static final int number16=0x7f090014;
-        public static final int number25=0x7f090015;
-        public static final int number9=0x7f090013;
-        public static final int numberGame=0x7f090010;
-        public static final int numericoptions=0x7f090012;
+        public static final int number16=0x7f090015;
+        public static final int number25=0x7f090016;
+        public static final int number9=0x7f090014;
+        public static final int numberGame=0x7f090011;
+        public static final int numericoptions=0x7f090013;
         public static final int playGame=0x7f090007;
         public static final int quit=0x7f09000d;
-        public static final int scrollView1=0x7f090002;
-        public static final int startgame=0x7f09001e;
-        public static final int stopWatch=0x7f090001;
-        public static final int strict=0x7f09001c;
+        public static final int startgame=0x7f09001f;
+        public static final int stopWatch=0x7f090002;
+        public static final int strict=0x7f09001d;
         public static final int textView1=0x7f090006;
         public static final int textView2=0x7f09000a;
         public static final int textView4=0x7f09000c;
@@ -79,10 +81,11 @@ public final class R {
         public static final int activity_help=0x7f030002;
         public static final int activity_high_score=0x7f030003;
         public static final int activity_main=0x7f030004;
-        public static final int banner_layout=0x7f030005;
-        public static final int example=0x7f030006;
-        public static final int game_options=0x7f030007;
-        public static final int grid_layout=0x7f030008;
+        public static final int activity_splash_screen=0x7f030005;
+        public static final int banner_layout=0x7f030006;
+        public static final int example=0x7f030007;
+        public static final int game_options=0x7f030008;
+        public static final int grid_layout=0x7f030009;
     }
     public static final class menu {
         public static final int about=0x7f080000;
@@ -93,6 +96,7 @@ public final class R {
         public static final int main=0x7f080005;
         public static final int number_game=0x7f080006;
         public static final int number_game_popup=0x7f080007;
+        public static final int splash_screen=0x7f080008;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;

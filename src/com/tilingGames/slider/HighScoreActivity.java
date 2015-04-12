@@ -58,7 +58,8 @@ public class HighScoreActivity extends Activity {
 		 		lv.setAdapter(as1);
 		}
 		else{
-			Util.displayToast(this, "There aren't any scores!",true);
+			Util.displayToast(this, "There aren't any scores saved!",true);
+			finish();
 		}
 	}
 

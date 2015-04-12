@@ -13,6 +13,7 @@ public class GameActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_options);
+        AppRater.app_launched(this);
     }
 
     public void StartGame(View v) {

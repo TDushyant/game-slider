@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class AboutActivity extends Activity {
 
@@ -12,6 +13,12 @@ public class AboutActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about);
+		
+		
+		TextView aboutView = (TextView) this.findViewById(R.id.aboutText);
+		String aboutText = Util.prepareAboutText();
+		aboutView.setText(aboutText);
+		
 	}
 
 	@Override

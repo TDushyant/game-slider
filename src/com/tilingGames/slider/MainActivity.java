@@ -6,12 +6,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.google.ads.AdView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements AnimationListener {
 
 	Button btnClosePopup;
 	Button btnCreatePopup;
@@ -20,7 +24,7 @@ public class MainActivity extends Activity {
 	int selectedNumberOfTiles;
 	int selectedGameStyleId;
 	private AdView adView;
-
+	Animation animFadein;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +101,24 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onAnimationEnd(Animation arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onAnimationRepeat(Animation animation) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onAnimationStart(Animation animation) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

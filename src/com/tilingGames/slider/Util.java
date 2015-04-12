@@ -87,15 +87,12 @@ public class Util {
 		StringBuffer sb = new StringBuffer();
 		sb.append("Play this game by sliding tile to open slot.\n\n")
 		.append("When tiles are arranged in correct order you win.\n\n")
-		.append("You have option of playing game with numbers or alphabets.\n\n")
+		.append("You have options of playing game with numbers or alphabets.\n\n")
 		.append("Number game has three options to play with 9, 16 or 25 tiles.\n\n")
 		.append("Alphabet game has three options to play with CAPITAL, small or mIxED letters.\n\n")
 		.append("Moreover there are two variants of the game.\n")
-		.append("\t1. Traditional where you can move only adjusent tile\n\n")
-		.append("\t2. Challanging mode where you can move any tile to open\n")
-		.append("\t    slot. This is more of challange as to how quickly you can solve the puzzle.\n\n")
-		.append("\t    solve the puzzle.\n\n");
-		
+		.append("\t1. Easy:               Any tile can be moved to open slot.\n")	
+		.append("\t2. Challanging: Only adjacent tile can be moved to open slot.\n\n");
 		return sb.toString();
 	}
 	
@@ -151,5 +148,12 @@ public class Util {
 	    	returnInt =  SMALL_BASE;
 	    }
 	    return returnInt;
+	}
+
+	public static String prepareAboutText() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("About LeanOn Solutions.\n\n")
+		.append("\t Purpose is to provide game with learning opportunity.\n\n");
+		return sb.toString();
 	}
 }
