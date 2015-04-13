@@ -39,7 +39,7 @@
 	    android:textColor="#ffffff"
         android:background="@drawable/custombutton"
         android:onClick="ButtonOnClick"
-        android:text="View Score" />
+        android:text="@string/view_score" />
     
     <TextView
         android:id="@+id/textView2"

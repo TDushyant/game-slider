@@ -29,5 +29,6 @@
     <string name="title_activity_play_game">Select Option and Play</string>
     <string name="title_activity_about">About LearnOn</string>
     <string name="title_activity_high_score">Scores:</string>
+    <string name="view_score">View Score</string>
 
 </resources>

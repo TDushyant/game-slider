@@ -42,7 +42,7 @@ public final class R {
     }
     public static final class id {
         public static final int aboutText=0x7f090000;
-        public static final int action_settings=0x7f090020;
+        public static final int action_settings=0x7f090021;
         public static final int alphaGame=0x7f090012;
         public static final int alphacapital=0x7f090018;
         public static final int alphamix=0x7f09001a;
@@ -50,6 +50,7 @@ public final class R {
         public static final int alphasmall=0x7f090019;
         public static final int bannerTextView=0x7f09000f;
         public static final int button1=0x7f09001e;
+        public static final int customButton=0x7f090020;
         public static final int freeflowing=0x7f09001c;
         public static final int gameOption=0x7f09001b;
         public static final int gameType=0x7f090010;
@@ -127,6 +128,7 @@ public final class R {
         public static final int title_activity_number_game=0x7f060007;
         public static final int title_activity_number_game_popup=0x7f060008;
         public static final int title_activity_play_game=0x7f060019;
+        public static final int view_score=0x7f06001c;
     }
     public static final class style {
         /** 
