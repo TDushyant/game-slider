@@ -66,7 +66,7 @@ public class AppRater {
         tv.setText("If you enjoy using " + APP_TITLE + ", please take a moment to rate it. Thanks for your support!");
         tv.setWidth(240);
         tv.setPadding(4, 0, 4, 10);
-		tv.setBackgroundDrawable(context.getResources().getDrawable(R.id.customButton));
+		//tv.setBackgroundDrawable(context.getResources().getDrawable(R.id.customButton));
         ll.addView(tv);
 
         Button b1 = new Button(mContext);
@@ -77,7 +77,7 @@ public class AppRater {
                 dialog.dismiss();
             }
         }); 
-        b1.setBackgroundDrawable(context.getResources().getDrawable(R.id.customButton));
+        //b1.setBackgroundDrawable(context.getResources().getDrawable(R.id.customButton));
         ll.addView(b1);
 
         Button b2 = new Button(mContext);
@@ -87,7 +87,7 @@ public class AppRater {
                 dialog.dismiss();
             }
         });
-        b2.setBackgroundDrawable(context.getResources().getDrawable(R.id.customButton));
+        //b2.setBackgroundDrawable(context.getResources().getDrawable(R.id.customButton));
         ll.addView(b2);
 
         Button b3 = new Button(mContext);
@@ -103,7 +103,7 @@ public class AppRater {
                 dialog.dismiss();
             }
         });
-        b3.setBackgroundDrawable(context.getResources().getDrawable(R.id.customButton));
+        //b3.setBackgroundDrawable(context.getResources().getDrawable(R.id.customButton));
         ll.addView(b3);
 
         dialog.setContentView(ll);        
