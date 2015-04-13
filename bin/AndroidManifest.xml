@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tilingGames.slider"
+    package="com.learnon.games.tiling.slider"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -25,18 +25,18 @@
         android:theme="@style/AppTheme" >
                
         <activity
-            android:name="com.tilingGames.slider.MainActivity"
+            android:name="com.learnon.games.tiling.slider.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
              >
         </activity>
         
         <activity
-            android:name="com.tilingGames.slider.GameActivity"
+            android:name="com.learnon.games.tiling.slider.GameActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/title_activity_play_game" >
         </activity>
         <activity
-            android:name="com.tilingGames.slider.NumberGameActivity"
+            android:name="com.learnon.games.tiling.slider.NumberGameActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/title_activity_number_game" >
         </activity>
@@ -45,12 +45,12 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" >
         </activity>
         <activity
-            android:name="com.tilingGames.slider.AlphaGameActivity"
+            android:name="com.learnon.games.tiling.slider.AlphaGameActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/title_activity_alpha_game" >
         </activity>
         <activity
-            android:name="com.tilingGames.slider.HelpActivity"
+            android:name="com.learnon.games.tiling.slider.HelpActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/title_activity_help" >
         </activity>
@@ -59,11 +59,11 @@
             android:label="@string/title_activity_about" >
         </activity>
         <activity
-            android:name="com.tilingGames.slider.HighScoreActivity"
+            android:name="com.learnon.games.tiling.slider.HighScoreActivity"
             android:label="@string/title_activity_high_score" >
         </activity>
         <activity
-            android:name="com.tilingGames.slider.SplashScreen"
+            android:name="com.learnon.games.tiling.slider.SplashScreen"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>

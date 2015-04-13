@@ -9,34 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".NumberGameActivity" >
     
-<!--    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="282dp"
-        android:layout_height="15dp"
-        android:layout_below="@+id/gridView1"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#ffffffff"/>
-    
-    <Button
-        android:id="@+id/goToMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical|center_horizontal|center"
-        android:layout_below="@+id/textView1"
-        android:layout_gravity="center_horizontal"
-        android:onClick="ButtonOnClick"
-        android:background="#cc2" 
-        android:text="@string/go_to_main" />
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="282dp"
-        android:layout_height="15dp"
-        android:layout_below="@+id/goToMain"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#ffffffff"/>
-    
--->
-    <GridView
+   <GridView
         android:id="@+id/gridView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
