@@ -55,7 +55,7 @@
             android:label="@string/title_activity_help" >
         </activity>
         <activity
-            android:name="com.tilingGames.slider.AboutActivity"
+            android:name="com.learnon.games.tiling.slider.AboutActivity"
             android:label="@string/title_activity_about" >
         </activity>
         <activity
