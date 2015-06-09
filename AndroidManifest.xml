@@ -8,15 +8,14 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
 
+    
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -26,40 +25,48 @@
                
         <activity
             android:name="com.learnon.games.tiling.slider.MainActivity"
+             android:screenOrientation="portrait"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
              >
         </activity>
         
         <activity
             android:name="com.learnon.games.tiling.slider.GameActivity"
+             android:screenOrientation="portrait"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/title_activity_play_game" >
         </activity>
         <activity
             android:name="com.learnon.games.tiling.slider.NumberGameActivity"
+             android:screenOrientation="portrait"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/title_activity_number_game" >
         </activity>
         <activity
             android:name="com.google.ads.AdActivity"
+             android:screenOrientation="portrait"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" >
         </activity>
         <activity
             android:name="com.learnon.games.tiling.slider.AlphaGameActivity"
+             android:screenOrientation="portrait"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/title_activity_alpha_game" >
         </activity>
         <activity
             android:name="com.learnon.games.tiling.slider.HelpActivity"
+             android:screenOrientation="portrait"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/title_activity_help" >
         </activity>
         <activity
             android:name="com.learnon.games.tiling.slider.AboutActivity"
+             android:screenOrientation="portrait"
             android:label="@string/title_activity_about" >
         </activity>
         <activity
             android:name="com.learnon.games.tiling.slider.HighScoreActivity"
+             android:screenOrientation="portrait"
             android:label="@string/title_activity_high_score" >
         </activity>
         <activity
