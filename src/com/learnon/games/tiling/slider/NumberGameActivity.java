@@ -28,6 +28,7 @@ public class NumberGameActivity extends Activity {
 	int numberOfColumns = 5;
 	boolean validMove = true;
 	boolean traditional = false;
+	String gameType = "";
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,12 @@ public class NumberGameActivity extends Activity {
         Intent intent = getIntent();
         int  numberOfTiles = intent.getIntExtra("noOfTiles", 25);
         traditional = intent.getBooleanExtra("traditional", false);
+        if (traditional) {
+        	gameType = "Numeric - " + numberOfTiles +" Tiles - Easy" ;
+        }
+        else {
+        	gameType = "Numeric - " + numberOfTiles +" Tiles - Challanging" ;
+        }
         
         List<String> dataList = Util.prepareNumberList(numberOfTiles);
         setBlankTileId(dataList);
@@ -55,6 +62,7 @@ public class NumberGameActivity extends Activity {
         // on click lister
         OnItemClickListener listner = new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+				 String timeElapsed = "";
 				Util.displayToast(getApplicationContext(),String.valueOf(position) + "/" + String.valueOf(id));
 				@SuppressWarnings("unchecked")
 				ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) parent.getAdapter();
@@ -73,10 +81,15 @@ public class NumberGameActivity extends Activity {
 				        stopWatch.stop();
 				        stopWatch.setBackgroundColor(Color.GREEN);
 				        
+				        //Time Calculations.
 				        long elapsedTime = SystemClock.elapsedRealtime() - stopWatch.getBase();
 				        long minutes = TimeUnit.MILLISECONDS.toMinutes(elapsedTime);
 				        long seconds = TimeUnit.MILLISECONDS.toSeconds(elapsedTime) % 60;
-				        String timeElapsed = minutes+ "." + seconds;
+				        if(seconds < 10)
+				        	timeElapsed = minutes+ ".0" + seconds;
+				        else
+				        	timeElapsed = minutes+ "." + seconds;	
+				        
 				        //create message box to guide user to main screen
 				        AlertDialog.Builder builder = new AlertDialog.Builder(NumberGameActivity.this);
 				        builder.setMessage("You Win").setTitle("Congratulations");
@@ -104,7 +117,7 @@ public class NumberGameActivity extends Activity {
 				        
 
 				        //call save score
-				        Util.saveScoreWindow(NumberGameActivity.this,timeElapsed);
+				        Util.saveScoreWindow(NumberGameActivity.this,timeElapsed,gameType);
 					}
 				}
 			}

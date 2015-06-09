@@ -1,7 +1,5 @@
 package com.learnon.games.tiling.slider;
 
-import com.learnon.games.tiling.slider.R;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -19,11 +17,11 @@ public class AppRater {
     private final static String APP_TITLE = "Slider";// App Name
     private final static String APP_PNAME = "com.tilingGames.slider";// Package Name
 
-    private final static int DAYS_UNTIL_PROMPT = 0;//Min number of days
-    private final static int LAUNCHES_UNTIL_PROMPT = 1;//Min number of launches
+    private final static int DAYS_UNTIL_PROMPT = 10;//Min number of days
+    private final static int LAUNCHES_UNTIL_PROMPT = 50;//Min number of launches
     
     public AppRater(Context context){
-        this.context=context;
+        AppRater.context=context;
     }
 
 

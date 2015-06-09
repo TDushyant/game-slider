@@ -27,8 +27,9 @@
     <string name="freeflowing">Easy</string>
     <string name="startgame">Let\'s Play</string>
     <string name="title_activity_play_game">Select Option and Play</string>
-    <string name="title_activity_about">About LearnOn</string>
+    <string name="title_activity_about">LearnOn Solutions</string>
     <string name="title_activity_high_score">Scores:</string>
     <string name="view_score">View Score</string>
-
+    <string name="developers">\t\tDevelopers:\n\t\t\t Aditya Trivedi \n\t\t\tDushyant Trivedi</string>
+    <string name="version">Version 0.23</string>
 </resources>

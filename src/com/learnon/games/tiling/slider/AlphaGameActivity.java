@@ -30,6 +30,7 @@ public class AlphaGameActivity extends Activity {
 	boolean validMove = true;
 	boolean traditional = false;
 	int alphaOption = 1; 
+	String gameType = "";
 	int numberOfColumns = 5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,22 @@ public class AlphaGameActivity extends Activity {
         Intent intent = getIntent();
         alphaOption = intent.getIntExtra("alphaOption", 1);
         traditional = intent.getBooleanExtra("traditional", false);
+        
+        
+        String base = "capital";
+    	if (alphaOption == 2) {
+    		base = "Small"; // for small letters
+    	}else if (alphaOption == 3)
+    	{
+    		base = "Random";
+    	}
+    	if (traditional) {
+    		gameType = "Alpah - " + base +" - Easy";
+    	}
+    	else {
+    		gameType = "Alpah - " + base +" - Challanging";
+    	}
+        
         gridViewMain.setNumColumns(numberOfColumns);
         List<String> dataList = Util.prepareAlphaList(numberOfTiles, alphaOption);
         setBlankTileId(dataList);
@@ -70,11 +87,19 @@ public class AlphaGameActivity extends Activity {
 						Util.displayToast(getApplicationContext(), "You Win", true);
 				        stopWatch.stop();
 				        stopWatch.setBackgroundColor(Color.GREEN);
+				        
+				        
 				        //call save score
 				        long elapsedTime = SystemClock.elapsedRealtime() - stopWatch.getBase();
 				        long minutes = TimeUnit.MILLISECONDS.toMinutes(elapsedTime);
 				        long seconds = TimeUnit.MILLISECONDS.toSeconds(elapsedTime) % 60;
-				        String timeElapsed = minutes+ "." + seconds;
+				        String timeElapsed;
+				        if(seconds < 10)
+				        	timeElapsed = minutes+ ".0" + seconds;
+				        else
+				        	timeElapsed = minutes+ "." + seconds;
+				        
+				        
 				        //create message box to guide user to main screen
 				        AlertDialog.Builder builder = new AlertDialog.Builder(AlphaGameActivity.this);
 				        builder.setMessage("You Win").setTitle("Congratulations");
@@ -99,7 +124,7 @@ public class AlphaGameActivity extends Activity {
 				        });
 				        builder.setCancelable(false);
 				        builder.show();
-				        Util.saveScoreWindow(AlphaGameActivity.this,timeElapsed);
+				        Util.saveScoreWindow(AlphaGameActivity.this,timeElapsed,gameType);
 					}
 				}
 			}

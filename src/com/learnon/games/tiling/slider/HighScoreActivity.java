@@ -6,61 +6,71 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 
 import com.learnon.games.tiling.slider.R;
 
 
-public class HighScoreActivity extends Activity {
+public class HighScoreActivity extends FragmentActivity {
 
 	ListView lv;
 	ArrayAdapter<String> as1;
 	ArrayList<String> a2=new ArrayList<String>();
+	String gameType;
 	
 	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_high_score);
-		
-		lv = (ListView)findViewById(R.id.l1);
-		
-		//read the file
-		String fileContents = readFile();
-		
-		if(fileContents != null)
-		{
-			
-			String[] userScores = fileContents.split(",");
-			int len = userScores.length;
-			String[] temp;
-			
-			userScores = sortAccordingToTime(userScores);
-						
-			for(int i =0;i<len;i++){
-				temp = userScores[i].split("\\|");
-				a2.add("Name : " + temp[0] + "\n \t \t Time : " + temp[1].replace('.', ':'));
-			}
-			
-			
-			
-			 as1 = new  ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,a2);
-	
-		 		lv.setAdapter(as1);
-		}
-		else{
-			Util.displayToast(this, "There aren't any scores saved!",true);
-			finish();
-		}
-	}
+    private ExpandableListView expListView;
 
+    @Override
+    protected void onCreate(Bundle savedInstance) {
+        super.onCreate(savedInstance);
+        setContentView(R.layout.activity_high_score_all);
+        expListView = (ExpandableListView) findViewById(R.id.exp_listview);
+        fillList();
+    }
+
+    private void fillList() {
+        LinkedHashMap<String, List<HighScoreBean>> input = readFile(); // get the collection here
+        HighScoreAdapter adapter = new HighScoreAdapter(LayoutInflater.from(this), input);
+        expListView.setAdapter(adapter);
+    }
+    
+//    @Override
+//	protected void onCreate(Bundle savedInstanceState) {
+//		super.onCreate(savedInstanceState);
+//		setContentView(R.layout.activity_high_score);
+//		
+//		lv = (ListView)findViewById(R.id.l1);
+//		
+//		//read the file
+//		 LinkedHashMap<String, List<HighScoreBean>> fileContents = readFile();
+//		
+//		if(fileContents != null)
+//		{
+//			
+//			 as1 = new  ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,a2);
+//	
+//		 	 lv.setAdapter(as1);
+//		}
+//		else{
+//			Util.displayToast(this, "There aren't any scores saved!",true);
+//			finish();
+//		}
+//	}
+//
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -81,7 +91,9 @@ public class HighScoreActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public String readFile() {
+	public LinkedHashMap<String, List<HighScoreBean>> readFile() {
+	    LinkedHashMap<String, List<HighScoreBean>> result = new LinkedHashMap<String, List<HighScoreBean>>();
+	    
 		BufferedReader br = null;
 		
 		File highscorefile = new File(Environment.getExternalStorageDirectory().getPath() +"/SliderGame/HighScore.txt");
@@ -97,10 +109,26 @@ public class HighScoreActivity extends Activity {
     			String sCurrentLine;
      
     			br = new BufferedReader(new FileReader(highscorefile));
+    			HighScoreBean bean;
+    			String[] temp;
      
     			while ((sCurrentLine = br.readLine()) != null) {
-    				fileContents.append(sCurrentLine);
+    				temp = sCurrentLine.split("\\|");
+    				bean = new HighScoreBean(temp[0],temp[1],temp[2]);
+    				List<HighScoreBean> highScoreList = result.get(temp[0]);
+    				if (highScoreList == null) {
+    					List<HighScoreBean> scoreList = new ArrayList<HighScoreBean>();
+    					scoreList.add(bean);
+    					result.put(temp[0], scoreList);
+    				}
+    				else {
+    					highScoreList.add(bean);
+    				}
     			}
+    			
+    			for (List<HighScoreBean> value : result.values()) {
+					Collections.sort(value);
+				}
      
     		} catch (IOException e) {
     			e.printStackTrace();
@@ -117,7 +145,7 @@ public class HighScoreActivity extends Activity {
     			}
     		}
         	
-        	return fileContents.toString();
+        	return result;
         }
 	}
 	
@@ -157,5 +185,14 @@ public class HighScoreActivity extends Activity {
 		}
 		
 		return false;
+	}
+
+	public String doSumthing(String[] userScores){
+		
+		
+		
+		
+		
+		return null;
 	}
 }

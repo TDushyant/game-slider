@@ -16,9 +16,9 @@ public class AboutActivity extends Activity {
 		setContentView(R.layout.activity_about);
 		
 		
-		TextView aboutView = (TextView) this.findViewById(R.id.aboutText);
-		String aboutText = Util.prepareAboutText();
-		aboutView.setText(aboutText);
+		//TextView aboutView = (TextView) this.findViewById(R.id.aboutText);
+		//String aboutText = Util.prepareAboutText();
+		//aboutView.setText(aboutText);
 		
 	}
 

@@ -1,12 +1,16 @@
 package com.learnon.games.tiling.slider;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.TreeMap;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -158,24 +162,18 @@ public class Util {
 	    return returnInt;
 	}
 
-	public static String prepareAboutText() {
-		StringBuffer sb = new StringBuffer();
-		sb.append("About LeanOn Solutions.\n\n")
-		.append("\t Purpose is to provide game with learning opportunity.\n\n");
-		return sb.toString();
-	}
-
-	public static void saveScoreWindow(Activity activity,	final String timeElapsed) {
-			AlertDialog.Builder builder = new AlertDialog.Builder(activity.getApplicationContext());
+	public static void saveScoreWindow(Activity act,	final String timeElapsed , final String gameType) {
+			AlertDialog.Builder builder = new AlertDialog.Builder(act);
 	        builder.setMessage("Please Enter Your name :").setTitle("Save Score");
 	        //builder.setBackgroundDrawable(this.getApplicationContext().getResources().getDrawable(R.id.customButton));
 
-	        final EditText input = new EditText(activity.getApplicationContext());
+	        final EditText input = new EditText(act);
 	        builder.setView(input);
 	        builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int id) {
+	            	HighScoreBean scoreBean = new HighScoreBean(gameType, input.getText().toString(),timeElapsed);
 	                // User clicked OK button
-	            	writeFile(input.getText().toString(),timeElapsed);
+	            	writeFile(scoreBean.toString());
 	            }
 	        });
 	        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -188,35 +186,55 @@ public class Util {
 	        builder.show();
 			
 		}
-	public static void writeFile(String name,String timeElapsed) {
+	public static void writeFile(String record) {
 		
 		File dir = new File(Environment.getExternalStorageDirectory().getPath() +"/SliderGame");
         if(!dir.exists())
         	dir.mkdir();
         
-        File image = new File(dir +"/HighScore.txt");
+        File file = new File(dir +"/HighScore.txt");
         
         try {
-        	if(!image.exists())
-			image.createNewFile();
+        	if(!file.exists())
+			file.createNewFile();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
         
         try{
-        	FileWriter FW = new FileWriter(image,true);
+        	FileWriter fw = new FileWriter(file,true);
         
-        	FW.write(name + "|" + timeElapsed + ",");
+        	fw.write(record);
         	
-        	FW.flush();
-        	FW.close();
+        	fw.flush();
+        	fw.close();
         	
-        	image.setReadOnly();
+        	file.setReadOnly();
         }
         catch(Exception e){
         	
         }
 		
 	}
+	
+    public static void sortLine() throws Exception {
+	        BufferedReader reader = new BufferedReader(new FileReader("fileToRead"));
+	        Map<String, String> map=new TreeMap<String, String>();
+	        String line="";
+	        while((line=reader.readLine())!=null){
+	        	map.put(getField(line),line);
+	        }
+	        reader.close();
+	        FileWriter writer = new FileWriter("fileToWrite");
+	        for(String val : map.values()){
+	        	writer.write(val);	
+	        	writer.write('\n');
+	        }
+	        writer.close();
+	    }
+
+	    private static String getField(String line) {
+	    	return line.split(" ")[0];//extract value you want to sort on
+	    }
 
 }
