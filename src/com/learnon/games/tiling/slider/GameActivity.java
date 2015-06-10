@@ -1,10 +1,7 @@
 package com.learnon.games.tiling.slider;
 
-import com.learnon.games.tiling.slider.R;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;

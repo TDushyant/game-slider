@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class AppRater {
+	@SuppressWarnings("unused")
 	private static Context context;
 	
     private final static String APP_TITLE = "Slider";// App Name

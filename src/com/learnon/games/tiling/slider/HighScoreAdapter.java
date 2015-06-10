@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class HighScoreAdapter extends BaseExpandableListAdapter {
@@ -53,17 +54,21 @@ public class HighScoreAdapter extends BaseExpandableListAdapter {
 
 	    @Override
 	    public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-	        TextView simpleTextView = null;
+	        LinearLayout layoutView = null;
 	        if (convertView == null) {
 	            // inflate what you need, for testing purposes I am using android
 	            // built-in layout
-	            simpleTextView = (TextView) inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
+	        	layoutView = (LinearLayout) inflater.inflate(R.layout.activity_high_score, parent, false);
 	        } else {
-	            simpleTextView = (TextView) convertView;
+	        	layoutView = (LinearLayout) convertView;
 	        }
 	        HighScoreBean highScoreBean = getChildData(groupPosition, childPosition);
-	        simpleTextView.setText("Name: "+highScoreBean.getName()+"\n\t\t\t Score: "+highScoreBean.getTime());
-	        return simpleTextView;
+	        //TextView tv1 = (TextView) findViewById(R.id.hsName);
+	        TextView tv1 = (TextView) layoutView.getChildAt(0);
+	        TextView tv2 = (TextView) layoutView.getChildAt(1);
+	        tv1.setText(highScoreBean.getName());
+	        tv2.setText(highScoreBean.getTime());
+	        return layoutView;
 	    }
 
 	    @Override

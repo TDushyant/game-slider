@@ -11,7 +11,6 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -127,14 +126,7 @@ public class NumberGameActivity extends Activity {
         stopWatch.start();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
- 
-	private void setBlankTileId(List<String> dataList) {
+    private void setBlankTileId(List<String> dataList) {
     	for(int i = 0; i <= dataList.size() ; i++) {
     		if (dataList.get(i).trim().length() == 0) {
     			blankTileId = i;

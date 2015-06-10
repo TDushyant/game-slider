@@ -13,16 +13,23 @@
         android:id="@+id/gridView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:horizontalSpacing="10dp"
         android:numColumns="4"
         android:verticalSpacing="10dp" >
     </GridView>
+    <TextView
+        android:id="@+id/abc"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:cacheColorHint="#00000000" >
+    </TextView>
     
     <Chronometer
         android:id="@+id/stopWatch"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_below="@+id/gridView1"
         android:layout_centerHorizontal="true"
         android:format="%s"

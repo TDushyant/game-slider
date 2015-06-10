@@ -5,7 +5,12 @@ public class HighScoreBean implements Comparable<HighScoreBean> {
 	String name;
 	String time;
 	public HighScoreBean(String gameType, String name, String timeElapsed) {
-		this.name = name;
+		if (name.trim().length() == 0) {
+			this.name = "Unknown";
+		}
+		else {
+			this.name = name;
+		}
 		this.gameType = gameType;
 		this.time = timeElapsed;
 	}

@@ -1,10 +1,7 @@
 package com.learnon.games.tiling.slider;
 
-import com.learnon.games.tiling.slider.R;
-
-import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
+import android.os.Bundle;
 import android.widget.TextView;
 
 public class HelpActivity extends Activity {
@@ -17,12 +14,4 @@ public class HelpActivity extends Activity {
 		TextView helpView = (TextView) this.findViewById(R.id.helpText);
 		helpView.setText(helpText);
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.help, menu);
-		return true;
-	}
-	
 }

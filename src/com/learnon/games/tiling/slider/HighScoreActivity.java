@@ -10,18 +10,14 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
-
-import com.learnon.games.tiling.slider.R;
 
 
 public class HighScoreActivity extends FragmentActivity {
@@ -54,13 +50,6 @@ public class HighScoreActivity extends FragmentActivity {
 	    }
     }
     
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.high_score, menu);
-		return true;
-	}
-
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
