@@ -46,18 +46,18 @@ public class AlphaGameActivity extends Activity {
         traditional = intent.getBooleanExtra("traditional", false);
         
         
-        String base = "capital";
+        String base = "CAPITAL";
     	if (alphaOption == 2) {
-    		base = "Small"; // for small letters
+    		base = "small"; // for small letters
     	}else if (alphaOption == 3)
     	{
-    		base = "Random";
+    		base = "mIxED";
     	}
     	if (traditional) {
-    		gameType = "Alpah - " + base +" - Easy";
+    		gameType = "Alpah - " + base +" - Challanging";
     	}
     	else {
-    		gameType = "Alpah - " + base +" - Challanging";
+    		gameType = "Alpah - " + base +" - Easy";
     	}
         
         gridViewMain.setNumColumns(numberOfColumns);

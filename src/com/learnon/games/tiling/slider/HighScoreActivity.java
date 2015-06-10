@@ -44,33 +44,16 @@ public class HighScoreActivity extends FragmentActivity {
 
     private void fillList() {
         LinkedHashMap<String, List<HighScoreBean>> input = readFile(); // get the collection here
-        HighScoreAdapter adapter = new HighScoreAdapter(LayoutInflater.from(this), input);
-        expListView.setAdapter(adapter);
+        if (input == null) {
+			Util.displayToast(this, "There aren't any scores saved!",true);
+			finish();
+        }
+        else {
+	        HighScoreAdapter adapter = new HighScoreAdapter(LayoutInflater.from(this), input);
+	        expListView.setAdapter(adapter);
+	    }
     }
     
-//    @Override
-//	protected void onCreate(Bundle savedInstanceState) {
-//		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.activity_high_score);
-//		
-//		lv = (ListView)findViewById(R.id.l1);
-//		
-//		//read the file
-//		 LinkedHashMap<String, List<HighScoreBean>> fileContents = readFile();
-//		
-//		if(fileContents != null)
-//		{
-//			
-//			 as1 = new  ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,a2);
-//	
-//		 	 lv.setAdapter(as1);
-//		}
-//		else{
-//			Util.displayToast(this, "There aren't any scores saved!",true);
-//			finish();
-//		}
-//	}
-//
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -102,10 +85,7 @@ public class HighScoreActivity extends FragmentActivity {
         	return null;
         }
         else{
-        	StringBuilder fileContents = new StringBuilder();
         	try {
-        		 
-    			
     			String sCurrentLine;
      
     			br = new BufferedReader(new FileReader(highscorefile));
@@ -147,52 +127,5 @@ public class HighScoreActivity extends FragmentActivity {
         	
         	return result;
         }
-	}
-	
-	public String[] sortAccordingToTime(String[] userScores){
-		int len = userScores.length;
-		String temp = "";
-		
-		for(int i=0;i<len;i++){
-			String Score = userScores[i].split("\\|")[1];
-			
-			for(int j =0;j<len;j++){
-				
-				
-				String compareScore = userScores[j].split("\\|")[1];
-				
-				if(compareTimeString(Score,compareScore)){
-					temp = userScores[i];
-					userScores[i]=userScores[j];
-					userScores[j]=temp;
-				}
-				
-			}
-			
-		}
-		
-		return userScores;
-	}
-	
-	public boolean compareTimeString(String scr1,String scr2){
-		
-		float score1 = Float.parseFloat(scr1);
-		float score2 = Float.parseFloat(scr2);
-		
-		if(score1<score2)
-		{
-			return true;
-		}
-		
-		return false;
-	}
-
-	public String doSumthing(String[] userScores){
-		
-		
-		
-		
-		
-		return null;
 	}
 }

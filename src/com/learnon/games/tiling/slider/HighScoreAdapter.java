@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,19 +52,17 @@ public class HighScoreAdapter extends BaseExpandableListAdapter {
 //	    }
 
 	    @Override
-	    public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
-	            View convertView, ViewGroup parent) {
+	    public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 	        TextView simpleTextView = null;
 	        if (convertView == null) {
 	            // inflate what you need, for testing purposes I am using android
 	            // built-in layout
-	            simpleTextView = (TextView) inflater.inflate(android.R.layout.simple_list_item_1,
-	                    parent, false);
+	            simpleTextView = (TextView) inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
 	        } else {
 	            simpleTextView = (TextView) convertView;
 	        }
-	        HighScoreBean HighScoreBean = getChildData(groupPosition, childPosition);
-	        simpleTextView.setText(HighScoreBean.toString());
+	        HighScoreBean highScoreBean = getChildData(groupPosition, childPosition);
+	        simpleTextView.setText("Name: "+highScoreBean.getName()+"\n\t Score: "+highScoreBean.getTime());
 	        return simpleTextView;
 	    }
 
@@ -101,6 +100,7 @@ public class HighScoreAdapter extends BaseExpandableListAdapter {
 	            simpleTextView = (TextView) convertView;
 	        }
 	        simpleTextView.setText(getKey(groupPosition));
+	        simpleTextView.setBackgroundColor(Color.GRAY);
 	        return simpleTextView;
 	    }
 

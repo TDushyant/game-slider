@@ -40,4 +40,9 @@ public class HighScoreBean implements Comparable<HighScoreBean> {
 		// TODO Auto-generated method stub
         return this.getTime().compareTo(anotherBean.getTime());
 	}
+	public CharSequence getScoreRecord() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(name).append("\t\t\t\t\t\t").append(time);
+        return sb.toString();
+	}
 }

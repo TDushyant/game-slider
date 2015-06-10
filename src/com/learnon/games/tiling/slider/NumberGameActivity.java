@@ -44,10 +44,10 @@ public class NumberGameActivity extends Activity {
         int  numberOfTiles = intent.getIntExtra("noOfTiles", 25);
         traditional = intent.getBooleanExtra("traditional", false);
         if (traditional) {
-        	gameType = "Numeric - " + numberOfTiles +" Tiles - Easy" ;
+        	gameType = "Numeric - " + numberOfTiles +" Tiles - Challanging" ;
         }
         else {
-        	gameType = "Numeric - " + numberOfTiles +" Tiles - Challanging" ;
+        	gameType = "Numeric - " + numberOfTiles +" Tiles - Easy" ;
         }
         
         List<String> dataList = Util.prepareNumberList(numberOfTiles);

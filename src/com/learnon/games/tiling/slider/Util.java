@@ -204,7 +204,7 @@ public class Util {
         try{
         	FileWriter fw = new FileWriter(file,true);
         
-        	fw.write(record);
+        	fw.write(record+"\n");
         	
         	fw.flush();
         	fw.close();
