@@ -30,6 +30,7 @@
     <string name="title_activity_about">LearnOn Solutions</string>
     <string name="title_activity_high_score">Scores:</string>
     <string name="view_score">View Score</string>
-    <string name="developers">\t\tDevelopers:\n\t\t\t Aditya Trivedi \n\t\t\tDushyant Trivedi</string>
-    <string name="version">Version 0.23</string>
+    <string name="developers">\t\tDevelopers:\n\t\t\tAditya Trivedi \n\t\t\tDushyant Trivedi</string>
+    <string name="version">Version: 0.23.07</string>
+    <string name="aboutAddress">Mumbai, India</string>
 </resources>

@@ -4,6 +4,7 @@ import com.learnon.games.tiling.slider.R;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
@@ -17,8 +18,33 @@ public class GameActivity extends Activity {
         setContentView(R.layout.game_options);
         AppRater.app_launched(this);
     }
+    
+    public void checkGameType(View v) {
+    	RadioButton numberGame = (RadioButton)findViewById(R.id.numberGame);
+    	RadioButton alphaGame = (RadioButton)findViewById(R.id.alphaGame);
+    	RadioGroup numericGroup = (RadioGroup) findViewById(R.id.numericoptions);
+		RadioGroup alphaGroup = (RadioGroup) findViewById(R.id.alphaoptions);
+    	if (alphaGame.isChecked()) {
+            for(int i = 0; i < alphaGroup.getChildCount(); i++){
+                ((RadioButton)alphaGroup.getChildAt(i)).setEnabled(true);
+            }
+    		numericGroup.clearCheck();
+            for(int i = 0; i < numericGroup.getChildCount(); i++){
+                ((RadioButton)numericGroup.getChildAt(i)).setEnabled(false);
+            }
+    	} else if (numberGame.isChecked()) {
+            for(int i = 0; i < numericGroup.getChildCount(); i++){
+                ((RadioButton)numericGroup.getChildAt(i)).setEnabled(true);
+            }
+    		alphaGroup.clearCheck();
+            for(int i = 0; i < alphaGroup.getChildCount(); i++){
+                ((RadioButton)alphaGroup.getChildAt(i)).setEnabled(false);
+            }
+    	}
+    	
+    }
 
-    public void StartGame(View v) {
+    public void startGame(View v) {
     	RadioButton numberGame = (RadioButton)findViewById(R.id.numberGame);
     	RadioButton alphaGame = (RadioButton)findViewById(R.id.alphaGame);
     	RadioButton traditionalGame = (RadioButton)findViewById(R.id.strict);

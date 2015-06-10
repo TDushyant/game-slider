@@ -62,7 +62,7 @@ public class HighScoreAdapter extends BaseExpandableListAdapter {
 	            simpleTextView = (TextView) convertView;
 	        }
 	        HighScoreBean highScoreBean = getChildData(groupPosition, childPosition);
-	        simpleTextView.setText("Name: "+highScoreBean.getName()+"\n\t Score: "+highScoreBean.getTime());
+	        simpleTextView.setText("Name: "+highScoreBean.getName()+"\n\t\t\t Score: "+highScoreBean.getTime());
 	        return simpleTextView;
 	    }
 
