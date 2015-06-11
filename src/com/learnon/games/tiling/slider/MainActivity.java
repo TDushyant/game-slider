@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 
+import com.google.ads.AdRequest;
 import com.google.ads.AdView;
 import com.learnon.games.tiling.slider.R;
 
@@ -26,9 +27,10 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        AdView adView = (AdView)this.findViewById(R.id.adView);
-//        AdRequest re = new AdRequest();
-//        adView.loadAd(re);
+        AdView adView = (AdView)this.findViewById(R.id.adView);
+        AdRequest re = new AdRequest();
+        re.addTestDevice("3A68FD0214E0AA25C9E4E6185B96D410");
+        adView.loadAd(re);
     }
     
     @Override

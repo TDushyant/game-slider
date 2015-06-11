@@ -33,4 +33,5 @@
     <string name="developers">\t\tDevelopers:\n\t\t\tAditya Trivedi \n\t\t\tDushyant Trivedi</string>
     <string name="version">Version: 0.23.07</string>
     <string name="aboutAddress">Mumbai, India</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>
