@@ -90,28 +90,7 @@ public class NumberGameActivity extends Activity {
 				        	timeElapsed = minutes+ "." + seconds;	
 				        
 				        //create message box to guide user to main screen
-				        AlertDialog.Builder builder = new AlertDialog.Builder(NumberGameActivity.this, AlertDialog. THEME_HOLO_DARK);
-				        builder.setMessage("You Win").setTitle("Congratulations");
-				        builder.setPositiveButton("Goto Main Menu", new DialogInterface.OnClickListener() {
-				            public void onClick(DialogInterface dialog, int id) {
-				                // User clicked OK button
-				            	
-				            	Util.displayToast(getApplicationContext(), "Main Menu");
-				        		Intent myIntent = new Intent(NumberGameActivity.this, MainActivity.class);
-				        		NumberGameActivity.this.startActivity(myIntent);
-				        		finish();
-				            }
-				        });
-				        builder.setNegativeButton("View High Scores", new DialogInterface.OnClickListener() {
-				            public void onClick(DialogInterface dialog, int id) {
-				                // User high Score the dialog
-				            	Util.displayToast(getApplicationContext(), "High Score");
-				        		Intent myIntent = new Intent(NumberGameActivity.this, HighScoreActivity.class);
-				        		NumberGameActivity.this.startActivity(myIntent);
-				        		finish();
-				            }
-				        });
-				        builder.setCancelable(false);
+				        AlertDialog.Builder builder = getFinishDialog();
 				        builder.show();
 				        
 
@@ -119,6 +98,32 @@ public class NumberGameActivity extends Activity {
 				        Util.saveScoreWindow(NumberGameActivity.this,timeElapsed,gameType);
 					}
 				}
+			}
+
+			private AlertDialog.Builder getFinishDialog() {
+				AlertDialog.Builder builder = new AlertDialog.Builder(NumberGameActivity.this, AlertDialog. THEME_HOLO_LIGHT);
+				builder.setMessage("You Win").setTitle("Congratulations");
+				builder.setPositiveButton("Goto Main Menu", new DialogInterface.OnClickListener() {
+				    public void onClick(DialogInterface dialog, int id) {
+				        // User clicked OK button
+				    	
+				    	Util.displayToast(getApplicationContext(), "Main Menu");
+						Intent myIntent = new Intent(NumberGameActivity.this, MainActivity.class);
+						NumberGameActivity.this.startActivity(myIntent);
+						finish();
+				    }
+				});
+				builder.setNegativeButton("View High Scores", new DialogInterface.OnClickListener() {
+				    public void onClick(DialogInterface dialog, int id) {
+				        // User high Score the dialog
+				    	Util.displayToast(getApplicationContext(), "High Score");
+						Intent myIntent = new Intent(NumberGameActivity.this, HighScoreActivity.class);
+						NumberGameActivity.this.startActivity(myIntent);
+						finish();
+				    }
+				});
+		        builder.setCancelable(false);
+				return builder;
 			}
         };
         

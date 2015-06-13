@@ -14,12 +14,9 @@ import java.util.TreeMap;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Environment;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -166,7 +163,7 @@ public class Util {
 	}
 
 	public static void saveScoreWindow(Activity act,	final String timeElapsed , final String gameType) {
-			AlertDialog.Builder builder = new AlertDialog.Builder(act, AlertDialog. THEME_HOLO_DARK);
+			AlertDialog.Builder builder = new AlertDialog.Builder(act, AlertDialog.  THEME_HOLO_LIGHT);
 	        builder.setMessage("Please Enter Your name :").setTitle("Save Score");
 	        //builder.setBackgroundDrawable(this.getApplicationContext().getResources().getDrawable(R.id.customButton));
 

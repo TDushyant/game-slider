@@ -100,32 +100,37 @@ public class AlphaGameActivity extends Activity {
 				        
 				        
 				        //create message box to guide user to main screen
-				        AlertDialog.Builder builder = new AlertDialog.Builder(AlphaGameActivity.this, AlertDialog. THEME_HOLO_DARK);
-				        builder.setMessage("You Win").setTitle("Congratulations");
-				        builder.setPositiveButton("Goto Main Menu", new DialogInterface.OnClickListener() {
-				            public void onClick(DialogInterface dialog, int id) {
-				                // User clicked OK button
-				            	
-				            	Util.displayToast(getApplicationContext(), "Main Menu");
-				        		Intent myIntent = new Intent(AlphaGameActivity.this, MainActivity.class);
-				        		AlphaGameActivity.this.startActivity(myIntent);
-				        		finish();
-				            }
-				        });
-				        builder.setNegativeButton("View High Scores", new DialogInterface.OnClickListener() {
-				            public void onClick(DialogInterface dialog, int id) {
-				                // User high Score the dialog
-				            	Util.displayToast(getApplicationContext(), "High Score");
-				        		Intent myIntent = new Intent(AlphaGameActivity.this, HighScoreActivity.class);
-				        		AlphaGameActivity.this.startActivity(myIntent);
-				        		finish();
-				            }
-				        });
-				        builder.setCancelable(false);
+				        AlertDialog.Builder builder = getFinishDialog();
 				        builder.show();
 				        Util.saveScoreWindow(AlphaGameActivity.this,timeElapsed,gameType);
 					}
 				}
+			}
+
+			private AlertDialog.Builder getFinishDialog() {
+				AlertDialog.Builder builder = new AlertDialog.Builder(AlphaGameActivity.this, AlertDialog. THEME_HOLO_LIGHT);
+				builder.setMessage("You Win").setTitle("Congratulations");
+				builder.setPositiveButton("Goto Main Menu", new DialogInterface.OnClickListener() {
+				    public void onClick(DialogInterface dialog, int id) {
+				        // User clicked OK button
+				    	
+				    	Util.displayToast(getApplicationContext(), "Main Menu");
+						Intent myIntent = new Intent(AlphaGameActivity.this, MainActivity.class);
+						AlphaGameActivity.this.startActivity(myIntent);
+						finish();
+				    }
+				});
+				builder.setNegativeButton("View High Scores", new DialogInterface.OnClickListener() {
+				    public void onClick(DialogInterface dialog, int id) {
+				        // User high Score the dialog
+				    	Util.displayToast(getApplicationContext(), "High Score");
+						Intent myIntent = new Intent(AlphaGameActivity.this, HighScoreActivity.class);
+						AlphaGameActivity.this.startActivity(myIntent);
+						finish();
+				    }
+				});
+				builder.setCancelable(false);
+				return builder;
 			}
         };
         
