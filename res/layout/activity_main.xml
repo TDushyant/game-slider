@@ -12,14 +12,14 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:textColor="#ffffffff"/>
+        android:textColor="#000000"/>
     
     <Button
         android:id="@+id/playGame"
         android:layout_width="126dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-	    android:textColor="#ffffff"
+	    android:textColor="#000000"
 	    android:gravity="center_vertical|center_horizontal|center"
         android:onClick="ButtonOnClick"
         android:background="@drawable/custombutton"
@@ -29,7 +29,7 @@
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:textColor="#ffffffff"/>
+        android:textColor="#000000"/>
         
     <Button
         android:id="@+id/highScore"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal|center"
         android:layout_gravity="center_horizontal"
-	    android:textColor="#ffffff"
+	    android:textColor="#000000"
         android:background="@drawable/custombutton"
         android:onClick="ButtonOnClick"
         android:text="@string/view_score" />
@@ -46,7 +46,7 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:textColor="#ffffffff"/>
+        android:textColor="#000000"/>
         
     <Button
         android:id="@+id/howToPlay"
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal|center"
         android:layout_gravity="center_horizontal"
-	    android:textColor="#ffffff"
+	    android:textColor="#000000"
         android:background="@drawable/custombutton"
         android:onClick="ButtonOnClick"
         android:text="@string/how_to_play" />
@@ -63,7 +63,7 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:textColor="#ffffffff"/>
+        android:textColor="#000000"/>
         
     <Button
         android:id="@+id/quit"
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal|center"
         android:layout_gravity="center_horizontal"
-	    android:textColor="#ffffff"
+	    android:textColor="#000000"
         android:background="@drawable/custombutton"
         android:onClick="ButtonOnClick"
         android:text="@string/quit" />
@@ -80,7 +80,7 @@
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:textColor="#ffffffff"/>
+        android:textColor="#000000"/>
     
    <com.google.ads.AdView
         android:id="@+id/adView"

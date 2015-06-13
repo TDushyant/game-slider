@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Slider</string>
+    <string name="app_name">l-Slider</string>
     <string name="action_settings">About LearnOn</string>
     <string name="hello_world">Hello world!</string>
     <string name="number_game">Play Number Game</string>
@@ -17,9 +17,9 @@
     <string name="play_game">Play Game</string>
     <string name="numbergame">Numbers</string>
     <string name="alphabetgame">Alphabets</string>
-    <string name="number9"> 9 Tiles</string>
-    <string name="number16">16 Tiles</string>
-    <string name="number25">25 Tiles</string>
+    <string name="number9">3 x 3</string>
+    <string name="number16">4 x 4</string>
+    <string name="number25">5 x 5</string>
     <string name="alphasmall">small</string>
     <string name="alphacapital">CAPITAL  </string>
     <string name="alphamix">mIxED</string>
@@ -31,7 +31,8 @@
     <string name="title_activity_high_score">Scores:</string>
     <string name="view_score">View Score</string>
     <string name="developers">\t\tDevelopers:\n\t\t\tAditya Trivedi \n\t\t\tDushyant Trivedi</string>
-    <string name="version">Version: 0.23.07</string>
+    <string name="version">\t\tVersion: 0.23.07</string>
     <string name="aboutAddress">Mumbai, India</string>
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="comapny_logo">Comapny Logo</string>
 </resources>

@@ -14,9 +14,12 @@ import java.util.TreeMap;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Environment;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -103,8 +106,8 @@ public class Util {
 		.append("Number game has three options to play with 9, 16 or 25 tiles.\n\n")
 		.append("Alphabet game has three options to play with CAPITAL, small or mIxED letters.\n\n")
 		.append("Moreover there are two variants of the game.\n")
-		.append("\t1. Easy:               Any tile can be moved to open slot.\n")	
-		.append("\t2. Challanging: Only adjacent tile can be moved to open slot.\n\n");
+		.append(" 1. Easy: Any tile can be moved to open slot.\n")	
+		.append(" 2. Challanging: Only adjacent tile can be moved to open slot.\n\n");
 		return sb.toString();
 	}
 	
@@ -163,7 +166,7 @@ public class Util {
 	}
 
 	public static void saveScoreWindow(Activity act,	final String timeElapsed , final String gameType) {
-			AlertDialog.Builder builder = new AlertDialog.Builder(act);
+			AlertDialog.Builder builder = new AlertDialog.Builder(act, AlertDialog. THEME_HOLO_DARK);
 	        builder.setMessage("Please Enter Your name :").setTitle("Save Score");
 	        //builder.setBackgroundDrawable(this.getApplicationContext().getResources().getDrawable(R.id.customButton));
 
@@ -236,5 +239,4 @@ public class Util {
 	    private static String getField(String line) {
 	    	return line.split(" ")[0];//extract value you want to sort on
 	    }
-
 }

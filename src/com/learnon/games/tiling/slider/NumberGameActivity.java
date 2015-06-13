@@ -76,9 +76,9 @@ public class NumberGameActivity extends Activity {
 				if (validMove) {
 					blankTileId = Util.swapTiles(adapter, blankTileId, position);
 					if (Util.isSolved(adapter)) {
-						Util.displayToast(getApplicationContext(), "You Win", true);
 				        stopWatch.stop();
 				        stopWatch.setBackgroundColor(Color.GREEN);
+						Util.displayToast(getApplicationContext(), "You Win", true);
 				        
 				        //Time Calculations.
 				        long elapsedTime = SystemClock.elapsedRealtime() - stopWatch.getBase();
@@ -90,14 +90,14 @@ public class NumberGameActivity extends Activity {
 				        	timeElapsed = minutes+ "." + seconds;	
 				        
 				        //create message box to guide user to main screen
-				        AlertDialog.Builder builder = new AlertDialog.Builder(NumberGameActivity.this);
+				        AlertDialog.Builder builder = new AlertDialog.Builder(NumberGameActivity.this, AlertDialog. THEME_HOLO_DARK);
 				        builder.setMessage("You Win").setTitle("Congratulations");
 				        builder.setPositiveButton("Goto Main Menu", new DialogInterface.OnClickListener() {
 				            public void onClick(DialogInterface dialog, int id) {
 				                // User clicked OK button
 				            	
-				            	Util.displayToast(getApplicationContext(), "Play Game");
-				        		Intent myIntent = new Intent(NumberGameActivity.this, GameActivity.class);
+				            	Util.displayToast(getApplicationContext(), "Main Menu");
+				        		Intent myIntent = new Intent(NumberGameActivity.this, MainActivity.class);
 				        		NumberGameActivity.this.startActivity(myIntent);
 				        		finish();
 				            }

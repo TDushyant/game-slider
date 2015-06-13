@@ -24,6 +24,9 @@ public class GameActivity extends Activity {
     	if (alphaGame.isChecked()) {
             for(int i = 0; i < alphaGroup.getChildCount(); i++){
                 ((RadioButton)alphaGroup.getChildAt(i)).setEnabled(true);
+                if (i == 0) {
+                	((RadioButton)alphaGroup.getChildAt(i)).setChecked(true);
+                }
             }
     		numericGroup.clearCheck();
             for(int i = 0; i < numericGroup.getChildCount(); i++){
@@ -32,6 +35,9 @@ public class GameActivity extends Activity {
     	} else if (numberGame.isChecked()) {
             for(int i = 0; i < numericGroup.getChildCount(); i++){
                 ((RadioButton)numericGroup.getChildAt(i)).setEnabled(true);
+                if (i == 0) {
+                	((RadioButton)numericGroup.getChildAt(i)).setChecked(true);
+                }
             }
     		alphaGroup.clearCheck();
             for(int i = 0; i < alphaGroup.getChildCount(); i++){

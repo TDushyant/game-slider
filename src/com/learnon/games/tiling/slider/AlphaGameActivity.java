@@ -100,14 +100,14 @@ public class AlphaGameActivity extends Activity {
 				        
 				        
 				        //create message box to guide user to main screen
-				        AlertDialog.Builder builder = new AlertDialog.Builder(AlphaGameActivity.this);
+				        AlertDialog.Builder builder = new AlertDialog.Builder(AlphaGameActivity.this, AlertDialog. THEME_HOLO_DARK);
 				        builder.setMessage("You Win").setTitle("Congratulations");
 				        builder.setPositiveButton("Goto Main Menu", new DialogInterface.OnClickListener() {
 				            public void onClick(DialogInterface dialog, int id) {
 				                // User clicked OK button
 				            	
-				            	Util.displayToast(getApplicationContext(), "Play Game");
-				        		Intent myIntent = new Intent(AlphaGameActivity.this, GameActivity.class);
+				            	Util.displayToast(getApplicationContext(), "Main Menu");
+				        		Intent myIntent = new Intent(AlphaGameActivity.this, MainActivity.class);
 				        		AlphaGameActivity.this.startActivity(myIntent);
 				        		finish();
 				            }

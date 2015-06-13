@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         AdView adView = (AdView)this.findViewById(R.id.adView);
         AdRequest re = new AdRequest();
-        re.addTestDevice("3A68FD0214E0AA25C9E4E6185B96D410");
+        //re.addTestDevice("3A68FD0214E0AA25C9E4E6185B96D410");
         adView.loadAd(re);
     }
     

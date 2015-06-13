@@ -1,6 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -8,182 +8,203 @@
         android:orientation="vertical" >
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:padding="10dip"
-                    android:layout_height="fill_parent">
-
-    <RadioGroup
-        android:id="@+id/gameType"
-	    android:textColor="#ffffff"
-        android:background="@drawable/custombutton"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <RadioButton
-            android:id="@+id/numberGame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-		    android:textColor="#ffffff"
-        	android:onClick="checkGameType"
-            android:text="@string/numbergame" />
-
-        <RadioButton
-            android:id="@+id/alphaGame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-		    android:textColor="#ffffff"
-        	android:onClick="checkGameType"
-            android:text="@string/alphabetgame" />
-    </RadioGroup>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:padding="10dip"
-                    android:layout_height="fill_parent">
-
-    <RadioGroup
-        android:id="@+id/numericoptions"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-	    android:textColor="#ffffff"
-        android:background="@drawable/custombutton">
-
-        <RadioButton
-            android:id="@+id/number9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-		    android:textColor="#ffffff"
-            android:text="@string/number9" />
-
-        <RadioButton
-            android:id="@+id/number16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-		    android:textColor="#ffffff"
-            android:text="@string/number16" />
-        <RadioButton
-            android:id="@+id/number25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-		    android:textColor="#ffffff"
-            android:text="@string/number25" />
-    
-    </RadioGroup>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:padding="10dip"
-                    android:layout_height="fill_parent">
-
-    <RadioGroup
-        android:id="@+id/alphaoptions"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-	    android:textColor="#ffffff"
-        android:background="@drawable/custombutton">
-
-        <RadioButton
-            android:id="@+id/alphacapital"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-		    android:textColor="#ffffff"
-            android:enabled="false"
-            android:text="@string/alphacapital" />
-        <RadioButton
-            android:id="@+id/alphasmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-		    android:textColor="#ffffff"
-            android:enabled="false"
-            android:text="@string/alphasmall" />
-
-        <RadioButton
-            android:id="@+id/alphamix"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-		    android:textColor="#ffffff"
-            android:enabled="false"
-            android:text="@string/alphamix" />
-    
-    </RadioGroup>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:padding="10dip"
-                    android:layout_height="fill_parent">
-
-    <RadioGroup
-        android:id="@+id/gameOption"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-	    android:textColor="#ffffff"
-        android:background="@drawable/custombutton">
-
-        <RadioButton
-            android:id="@+id/freeflowing"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-		    android:textColor="#ffffff"
-            android:text="@string/freeflowing" />
-   
-        <RadioButton
-            android:id="@+id/strict"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-		    android:textColor="#ffffff"
-            android:text="@string/strict" />
-
-    </RadioGroup>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:gravity="center">
-            <Button
-        android:id="@+id/startgame"
-        android:onClick="startGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-	    android:textColor="#ffffff"
-        android:background="@drawable/custombutton"
-        android:text="@string/startgame" />
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dip" >
+
+                    <RadioGroup
+                        android:id="@+id/gameType"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/custombutton"
+                        android:textColor="#000000" >
+
+                        <RadioButton
+                            android:id="@+id/numberGame"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_radio_button"
+                            android:checked="true"
+                            android:onClick="checkGameType"
+                            android:text="@string/numbergame"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/alphaGame"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_radio_button"
+                            android:onClick="checkGameType"
+                            android:text="@string/alphabetgame"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dip" >
+
+                    <RadioGroup
+                        android:id="@+id/numericoptions"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/custombutton"
+                        android:textColor="#000000" >
+
+                        <RadioButton
+                            android:id="@+id/number9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_radio_button"
+                            android:checked="true"
+                            android:text="@string/number9"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/number16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_radio_button"
+                            android:text="@string/number16"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/number25"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_radio_button"
+                            android:text="@string/number25"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dip" >
+
+                    <RadioGroup
+                        android:id="@+id/alphaoptions"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/custombutton"
+                        android:textColor="#000000" >
+
+                        <RadioButton
+                            android:id="@+id/alphacapital"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_radio_button"
+                            android:enabled="false"
+                            android:text="@string/alphacapital"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/alphasmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_radio_button"
+                            android:enabled="false"
+                            android:text="@string/alphasmall"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/alphamix"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_radio_button"
+                            android:enabled="false"
+                            android:text="@string/alphamix"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dip" >
+
+                    <RadioGroup
+                        android:id="@+id/gameOption"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/custombutton"
+                        android:textColor="#000000" >
+
+                        <RadioButton
+                            android:id="@+id/freeflowing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_radio_button"
+                            android:checked="true"
+                            android:text="@string/freeflowing"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/strict"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_radio_button"
+                            android:text="@string/strict"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/startgame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custombutton"
+                    android:onClick="startGame"
+                    android:text="@string/startgame"
+                    android:textColor="#000000" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
 </FrameLayout>
