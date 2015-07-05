@@ -104,7 +104,7 @@ public class Util {
 		.append("Alphabet game has three options to play with CAPITAL, small or mIxED letters.\n\n")
 		.append("Moreover there are two variants of the game.\n")
 		.append(" 1. Easy: Any tile can be moved to open slot.\n")	
-		.append(" 2. Challanging: Only adjacent tile can be moved to open slot.\n\n");
+		.append(" 2. Challenging: Only adjacent tile can be moved to open slot.\n\n");
 		return sb.toString();
 	}
 	
